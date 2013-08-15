@@ -52,11 +52,11 @@ We recommend to specify the subdirectories to `.gitignore`, which allows the "st
 ignore all the changes made in the subdirectories.
 
 
-Feature/Problem
+Feature(Problem)
 ---------------
 
 The command `git pull` trigger the recursive `git pull` for subdirectories 
-only if the "main" merge was not "empty"!
+only if the "main" `git fetch` (part of `git pull`) was not "empty"!
 ```bash
 # In structure_big directory
 $ git pull
