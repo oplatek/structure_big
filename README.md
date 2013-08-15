@@ -52,7 +52,7 @@ Feature/Problem
 ---------------
 
 The command `git pull` trigger the recursive `git pull` for subdirectories 
-only if something the "main" merge was not "empty"!
+only if the "main" merge was not "empty"!
 ```bash
 # In structure_big directory
 $ git pull
