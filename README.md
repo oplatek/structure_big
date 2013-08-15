@@ -11,3 +11,10 @@ Install
  ```
  * It is recommended to add the repository names also to `.gitignore`. See it for example
 
+
+Note
+----
+We use two dummy Git repositories containing just README.md as example.
+They can be found at:
+ * [Dummy repo 01](https://github.com/oplatek/structure_small01.git)
+ * [Dummy repo 02](https://github.com/oplatek/structure_small2.git)
