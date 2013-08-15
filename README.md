@@ -44,7 +44,7 @@ We recommend to specify the subdirectories to `.gitignore`, which allows the "st
 ignore all the changes made in the subdirectories.
 
 
-*Problem*
+*Problem:* Up-to-date `git pull` does not trigger the recursive git pull for subdirectories.
 ```bash
 $ git pull
 Already up-to-date.
