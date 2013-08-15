@@ -51,12 +51,13 @@ ignore all the changes made in the subdirectories.
 Feature/Problem
 ---------------
 
-The command `git pull` does trigger the recursive `git pull` for subdirectories if 
-something was merge!
+The command `git pull` trigger the recursive `git pull` for subdirectories 
+only if something the "main" merge was not "empty"!
 ```bash
+# In structure_big directory
 $ git pull
 Already up-to-date.
-# does not trigger the recursive git pull
+# does not trigger the recursive git pull for subdirectories
 ```
 
 Note
