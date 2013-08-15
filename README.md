@@ -10,6 +10,10 @@ Install
  cp big_hooks/* .git/hooks  # later they will update automaticaly 
  ```
  * It is recommended to add the repository names also to `.gitignore`. See it for example
+ * Run the `post-merge` hook from the "structure_big" directory
+ ```bash
+ ./big_hooks/post-merge
+ ```
 
 Usage
 -----
@@ -44,7 +48,11 @@ We recommend to specify the subdirectories to `.gitignore`, which allows the "st
 ignore all the changes made in the subdirectories.
 
 
-*Problem:* Up-to-date `git pull` does not trigger the recursive git pull for subdirectories.
+Feature/Problem
+---------------
+
+The command `git pull` does trigger the recursive `git pull` for subdirectories if 
+something was merge!
 ```bash
 $ git pull
 Already up-to-date.
