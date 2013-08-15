@@ -56,7 +56,7 @@ Feature(Problem)
 ---------------
 
 The command `git pull` trigger the recursive `git pull` for subdirectories 
-only if the "main" `git fetch` (part of `git pull`) was not "empty"!
+only if the "main" `git fetch` (part of `git pull`) was not empty!
 ```bash
 # In structure_big directory
 $ git pull
