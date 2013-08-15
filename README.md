@@ -17,7 +17,11 @@ Install
 
 Usage
 -----
-Use the common `git pull` for the "structure_big" repository, `git pull` is automatically applied
+ * Manually update subrepositories
+ ```bash
+ ./big_hooks/post-merge
+ ```
+ * Use the `git pull` for the "structure_big" repository. After that `git pull` is automatically applied
 to the subdirectories.
 
 Sample output of `git pull`:
