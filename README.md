@@ -1,6 +1,6 @@
 Intro
 -----
-The repository is a proposal how to deal hierarchical organisation of projects in Git
+This is an example how to deal with hierarchical organisation of projects under Git version control.
 
 Install
 -------
