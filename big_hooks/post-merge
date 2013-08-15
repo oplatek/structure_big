@@ -1,0 +1,35 @@
+#!/bin/bash
+
+# update the hooks itself
+cp -f big_hooks/* .git/hooks
+
+########################
+#  Clonening subrepos  #
+########################
+
+# Note that we use readonly https for presenting purposes only!
+# CHANGE ACCORDING YOUR SETTINGS!
+dir_repos=(structure_small01 structure_small02)
+url_repos=(https://github.com/oplatek/structure_small01.git https://github.com/oplatek/structure_small01.git)
+
+if [ ! ${#dir_repos[@]} -eq ${#url_repos[@]} ] ; then
+    echo "Repositories and their urls must have the same length!"
+    exit 1
+fi
+
+length=${#dir_repos[@]}
+for ((i = 0; i <$length ; i++ )) ; do 
+    d="${dir_repos[i]}"
+    url=${url_repos[i]}
+    printf "Cloning %s %s \n" "$d" "$url"
+    if [ -d "$d" ]; then
+        pushd "$d" || exit 1;
+        git pull "$url" || exit 1;
+        popd || exit 1;
+    else
+        git clone "$url" "$d"|| exit 1;
+    fi
+done
+
+# success
+exit 0
