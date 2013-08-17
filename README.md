@@ -5,26 +5,23 @@ This is an example how to deal with hierarchical organisation of projects under 
 Install
 -------
  * Specify the sub-repositories in `big_hooks/post-merge` in `dir_repos` and `url_repos` variables.
- * Copy the prepared hooks to `.git/hooks`
- ```bash
- cp big_hooks/* .git/hooks  # later they will update automaticaly 
- ```
  * It is recommended to add the repository names also to `.gitignore`. See it for example
- * Run the `post-merge` hook from the "structure_big" directory
+ * Run the `post-merge` hook from the "structure_big" directory for the first time *manually*!
  ```bash
  ./big_hooks/post-merge
  ```
+   This will register alias `git pull-all` and enable Git hook `post-merge`.
 
 Usage
 -----
- * Manually update subrepositories
+ * Manually update sub-repositories
  ```bash
- ./big_hooks/post-merge
+ git pull-all
  ```
  * Use the `git pull` for the "structure_big" repository. After that `git pull` is automatically applied
 to the subdirectories.
 
-Sample output of `git pull`:
+Sample output of `git pull` after non empty pull.
 ```bash
 remote: Counting objects: 5, done.
 remote: Compressing objects: 100% (2/2), done.

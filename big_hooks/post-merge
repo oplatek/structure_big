@@ -3,6 +3,9 @@
 # update the hooks itself
 cp -f big_hooks/* .git/hooks
 
+# add it as alias too
+git config alias.pull-all !./big_hooks/post-merge
+
 ########################
 #  Clonening subrepos  #
 ########################
