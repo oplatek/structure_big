@@ -9,8 +9,8 @@ cp -f big_hooks/* .git/hooks
 
 # Note that we use readonly https for presenting purposes only!
 # CHANGE ACCORDING YOUR SETTINGS!
-dir_repos=(structure_small01 structure_small02)
-url_repos=(https://github.com/oplatek/structure_small01.git https://github.com/oplatek/structure_small01.git)
+dir_repos=(structure_small1 structure_small2)
+url_repos=(https://github.com/oplatek/structure_small1.git https://github.com/oplatek/structure_small2.git)
 
 if [ ! ${#dir_repos[@]} -eq ${#url_repos[@]} ] ; then
     echo "Repositories and their urls must have the same length!"

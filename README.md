@@ -33,15 +33,15 @@ Unpacking objects: 100% (3/3), done.
 From https://github.com/oplatek/structure_big
    6dc4398..4164bb2  master     -> origin/master
 Merge made by the 'recursive' strategy.
-Cloning structure_small01 https://github.com/oplatek/structure_small01.git
-~/Downloads/structure_big/structure_small01 ~/Downloads/structure_big
-From https://github.com/oplatek/structure_small01
+Cloning structure_small1 https://github.com/oplatek/structure_small1.git
+~/Downloads/structure_big/structure_small1 ~/Downloads/structure_big
+From https://github.com/oplatek/structure_small1
  `* branch            HEAD       -> FETCH_HEAD
 Already up-to-date.
 ~/Downloads/structure_big
-Cloning structure_small02 https://github.com/oplatek/structure_small01.git
-~/Downloads/structure_big/structure_small02 ~/Downloads/structure_big
-From https://github.com/oplatek/structure_small01
+Cloning structure_small2 https://github.com/oplatek/structure_small1.git
+~/Downloads/structure_big/structure_small2 ~/Downloads/structure_big
+From https://github.com/oplatek/structure_small1
  * branch            HEAD       -> FETCH_HEAD
 Already up-to-date.
 ~/Downloads/structure_big
@@ -68,8 +68,8 @@ Note
 ----
 We use two dummy Git repositories containing just README.md as example.
 They can be found at:
- * [Dummy repo 01](https://github.com/oplatek/structure_small01.git)
- * [Dummy repo 02](https://github.com/oplatek/structure_small2.git)
+ * [Dummy repo 1](https://github.com/oplatek/structure_small1.git)
+ * [Dummy repo 2](https://github.com/oplatek/structure_small2.git)
 
 
 Links
