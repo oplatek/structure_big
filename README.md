@@ -48,7 +48,7 @@ We recommend to specify the subdirectories to `.gitignore`.
 It allows the "structure_big" repository to ignore the changes from the subdirectories.
 
 
-Feature(Problem)L
+Feature(Problem)
 ---------------
 
 The command `git pull` trigger the recursive `git pull` for subdirectories 
@@ -66,8 +66,8 @@ We use two dummy Git repositories containing just README.md as example.
 They can be found at:
  * [Dummy repo 1](https://github.com/oplatek/structure_small1.git)
  * [Dummy repo 2](https://github.com/oplatek/structure_small2.git)
- * 
  
+
 License and pull request
 ------------------------
  * The code is released under `Apache 2.0` license.
