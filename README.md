@@ -12,11 +12,12 @@ Install
 ./big_hooks/post-merge
 ```
 
-   This will register alias `git pull-all` and enable Git hook `post-merge`.
+   This will register aliases `git pull-all` and `git pull-sub`.
 
 Usage
 -----
- * Manually update sub-repositories `git pull-all` and `git pull-sub`
+ * Manually update sub-repositories `git pull-all` and `git pull-sub`.
+   The `git pull-all` is alias for `git pull ; git pull-sub`.
  * The aliases and the settings is automatically updated after merging 
    the~new changes from "structure_big".
 
