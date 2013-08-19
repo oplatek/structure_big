@@ -16,12 +16,13 @@ Install
 
 Usage
 -----
- * Manually update sub-repositories `git pull-all`
- * Use the `git pull` for the "structure_big" repository. After that `git pull` is automatically applied
-to the subdirectories.
+ * Manually update sub-repositories `git pull-all` and `git pull-sub`
+ * The aliases and the settings is automatically updated after merging 
+   the~new changes from "structure_big".
 
-Sample output of `git pull` after non empty pull.
+Sample output of `git pull-all` from the "big_structure" directory 
 ```bash
+$ git pull-all
 remote: Counting objects: 5, done.
 remote: Compressing objects: 100% (2/2), done.
 remote: Total 3 (delta 1), reused 3 (delta 1)
@@ -29,13 +30,13 @@ Unpacking objects: 100% (3/3), done.
 From https://github.com/oplatek/structure_big
    6dc4398..4164bb2  master     -> origin/master
 Merge made by the 'recursive' strategy.
-Cloning structure_small1 https://github.com/oplatek/structure_small1.git
+Pulling structure_small1 https://github.com/oplatek/structure_small1.git
 ~/Downloads/structure_big/structure_small1 ~/Downloads/structure_big
 From https://github.com/oplatek/structure_small1
  `* branch            HEAD       -> FETCH_HEAD
 Already up-to-date.
 ~/Downloads/structure_big
-Cloning structure_small2 https://github.com/oplatek/structure_small1.git
+Pulling structure_small2 https://github.com/oplatek/structure_small1.git
 ~/Downloads/structure_big/structure_small2 ~/Downloads/structure_big
 From https://github.com/oplatek/structure_small1
  * branch            HEAD       -> FETCH_HEAD
@@ -43,22 +44,18 @@ Already up-to-date.
 ~/Downloads/structure_big
 ```
 
-If you are working in the subdirectories the commits are stored in the subdirectories.
-We recommend to specify the subdirectories to `.gitignore`. 
-It allows the "structure_big" repository to ignore the changes from the subdirectories.
 
 
-Feature(Problem)
+Features and Gotchas
 ---------------
 
-The command `git pull` trigger the recursive `git pull` for subdirectories 
-only if the "main" `git fetch` (part of `git pull`) was not empty!
-```bash
-# In structure_big directory
-$ git pull
-Already up-to-date.
-# does not trigger the recursive git pull for subdirectories
-```
+ * If you are working in the subdirectories the commits are stored in the subdirectories.
+    We recommend to specify the subdirectories to `.gitignore`. 
+    It allows the "structure_big" repository to ignore the changes from the subdirectories.
+
+ * `git pull-all` and `git pull-sub` does not obviously work in the subdirectories, because
+    they are not registered there. I find it usefull, because it also notifies you that you
+    are in another working tree!
 
 Note
 ----

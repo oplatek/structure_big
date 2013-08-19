@@ -1,0 +1,30 @@
+#!/bin/bash
+
+# Note that we use readonly https for presenting purposes only!
+# CHANGE ACCORDING YOUR SETTINGS!
+dir_repos=(structure_small1 structure_small2)
+url_repos=(https://github.com/oplatek/structure_small1.git https://github.com/oplatek/structure_small2.git)
+
+if [ ! ${#dir_repos[@]} -eq ${#url_repos[@]} ] ; then
+    echo "Repositories and their urls must have the same length!"
+    exit 1
+fi
+
+length=${#dir_repos[@]}
+for ((i = 0; i <$length ; i++ )) ; do 
+    d="${dir_repos[i]}"
+    url=${url_repos[i]}
+    if [ -d "$d" ]; then
+        printf "Pulling %s %s \n" "$d" "$url"
+        pushd "$d" || exit 1;
+        git pull "$url" || exit 1;
+        popd || exit 1;
+    else
+        printf "Cloning %s %s \n" "$d" "$url"
+        git clone "$url" "$d"|| exit 1;
+    fi
+done
+
+# success
+exit 0
+

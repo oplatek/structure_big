@@ -1,38 +1,9 @@
 #!/bin/bash
 
-# update the hooks itself
-cp -f big_hooks/* .git/hooks
+# Update this hook itself
+cp -f big_hooks/post-merge .git/hooks
 
-# add it as alias too
-git config alias.pull-all !./big_hooks/post-merge
+# Register aliases 
+git config alias.pull-sub '!./big_hooks/pull-sub'
+git config alias.pull-all '!git pull; ./big_hooks/pull-sub'
 
-########################
-#  Clonening subrepos  #
-########################
-
-# Note that we use readonly https for presenting purposes only!
-# CHANGE ACCORDING YOUR SETTINGS!
-dir_repos=(structure_small1 structure_small2)
-url_repos=(https://github.com/oplatek/structure_small1.git https://github.com/oplatek/structure_small2.git)
-
-if [ ! ${#dir_repos[@]} -eq ${#url_repos[@]} ] ; then
-    echo "Repositories and their urls must have the same length!"
-    exit 1
-fi
-
-length=${#dir_repos[@]}
-for ((i = 0; i <$length ; i++ )) ; do 
-    d="${dir_repos[i]}"
-    url=${url_repos[i]}
-    printf "Cloning %s %s \n" "$d" "$url"
-    if [ -d "$d" ]; then
-        pushd "$d" || exit 1;
-        git pull "$url" || exit 1;
-        popd || exit 1;
-    else
-        git clone "$url" "$d"|| exit 1;
-    fi
-done
-
-# success
-exit 0
