@@ -19,7 +19,7 @@ Usage
  * Manually update sub-repositories `git pull-all` and `git pull-sub`.
    The `git pull-all` is alias for `git pull ; git pull-sub`.
  * The aliases and the settings is automatically updated after merging 
-   the~new changes from "structure_big".
+   the new changes from "structure_big".
 
 Sample output of `git pull-all` from the "big_structure" directory 
 ```bash
