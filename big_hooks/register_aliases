@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# Update this hook itself
-cp -f big_hooks/post-merge .git/hooks
-
 # Register aliases 
 git config alias.pull-sub '!./big_hooks/pull-sub'
 git config alias.pull-all '!git pull; ./big_hooks/pull-sub'

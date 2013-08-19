@@ -4,22 +4,23 @@ This is an example how to deal with hierarchical organisation of projects under 
 
 Install
 -------
- * Specify the sub-repositories in `big_hooks/post-merge` in `dir_repos` and `url_repos` variables.
+ * Specify the sub-repositories in `big_hooks/pull-sub` in `dir_repos` and `url_repos` variables.
  * It is recommended to add the repositories names to `.gitignore`.
- * Run the `post-merge` hook from the "structure_big" directory for the first time *manually*!
+ * Run the `big_hooks/register_aliases` script:
 
 ```bash
-./big_hooks/post-merge
+./big_hooks/register_aliases
 ```
 
-   This will register aliases `git pull-all` and `git pull-sub`.
+   This will register the aliases `git pull-all` and `git pull-sub`.
 
 Usage
 -----
- * Manually update sub-repositories `git pull-all` and `git pull-sub`.
-   The `git pull-all` is alias for `git pull ; git pull-sub`.
+ * Update sub-repositories using `git pull-all` and `git pull-sub`.
+ * `git pull-sub` will pull all sub-repositories specified in the `big_hooks/pull-sub` script.
+ * `git pull-all` is an alias for `git pull ; git pull-sub`.
  * The aliases and the settings is automatically updated after merging 
-   the new changes from "structure_big".
+   new changes from "structure_big".
 
 Sample output of `git pull-all` from the "big_structure" directory 
 ```bash
@@ -45,8 +46,6 @@ Already up-to-date.
 ~/Downloads/structure_big
 ```
 
-
-
 Features and Gotchas
 ---------------
 
@@ -54,9 +53,9 @@ Features and Gotchas
     We recommend to specify the subdirectories to `.gitignore`. 
     It allows the "structure_big" repository to ignore the changes from the subdirectories.
 
- * `git pull-all` and `git pull-sub` does not obviously work in the subdirectories, because
-    they are not registered there. I find it usefull, because it also notifies you that you
-    are in another working tree!
+ * `git pull-all` and `git pull-sub` do not obviously work from within the subdirectories, 
+    because they are not registered there. I find it useful, because it also notifies you 
+    that you are in another working tree!
 
 Note
 ----
